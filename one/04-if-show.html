@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if-show</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+        <div id="app">
+            <div v-if="isOk">{{title}}</div>
+
+            <div v-show="isOk">{{title}}</div>
+        </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                title:'hello world',
+                isOk:false
+            }
+        })
+        // v-if:绑定一个boolean值，如果为true输出，如果为false则不输出
+        // v-show:绑定一个boolean值，如果为true显示，如果为false则不显示display:none
+    </script>
+</body>
+</html>
