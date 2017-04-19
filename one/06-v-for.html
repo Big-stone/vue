@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+        <div id="app">
+
+            <ul>
+                <!--数组:遍历每一项-->
+                <!--<li v-for="item in names">{{item}}</li>-->
+                <!--遍历每一项+索引-->
+                <li v-for="(item, index) in names">{{item}}-{{index}}</li>
+            </ul>
+            
+            <ul>
+                <!--对象：遍历每一项-->
+                <!--<li v-for="value in user">{{value}}</li>-->
+
+                <!--对象：遍历每一项键值-->
+                <!--<li v-for="(value,key) in user">
+                    {{value}}--{{key}}
+                </li>-->
+
+                <!--对象：遍历每一项键值+索引-->
+                <li v-for="(value, key, index) in user">
+                    {{value}}-{{key}}-{{index}}
+                </li>
+            </ul>
+        </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                names:['李雷','韩梅梅','李梅','韩雷雷'],
+                user:{name:'韩梅梅', age:18 , sex:'女'}
+            }
+        })
+    </script>
+</body>
+</html>
