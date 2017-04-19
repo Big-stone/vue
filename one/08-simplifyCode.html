@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简化代码</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+
+        <!--<div id="app">
+            <ul v-show="isShow">
+                <li v-for="(item, index) in names">
+                    {{item}}--{{index}}
+                </li>
+            </ul>
+            <button v-bind:disabled="isDisabled" v-on:click="btnClick">按钮</button>
+        </div>-->
+        
+    <!-- 
+        v-bind的简化语法   v-bind:title="title"    :title="title"
+
+        v-on的简化语法     v-on:click="btnClick"   @click="btnClick"
+
+     -->
+
+        <div id="app">
+            <ul v-show="isShow">
+                <li v-for="(item, index) in names">
+                    {{item}}--{{index}}
+                </li>
+            </ul>
+            <button :disabled="isDisabled" @click="btnClick">按钮</button>
+        </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                names:['李雷','韩梅梅','李梅','韩雷雷'],
+                isShow:true,
+                isDisabled:false
+            },
+            methods:{
+                btnClick:function(){
+                    // this 指当前vue的实例
+                    // 点击按钮控制ul显示隐藏
+                    // this.isShow = !this.isShow;
+
+                    // 点击按钮给列表增加一项数据
+                    // this.names.push("禾禾")
+
+                    //禁用按钮
+                    this.isDisabled = true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
