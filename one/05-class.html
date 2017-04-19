@@ -26,7 +26,7 @@
             <div class="red" v-bind:class="{active:isActive}">{{title}}</div>
             <div class="red" v-bind:class="[cls,aa]">{{title}}</div>
             <div class="red" v-bind:class="[cls,{active:isActive}]">{{title}}</div>
-
+            
         </div>
     <script>
         var vm = new Vue({
@@ -37,6 +37,7 @@
                 hasBG:true,
                 isActive:false,
                 aa:'light'
+
             }
         })
     </script>
