@@ -21,7 +21,21 @@
             el:'#app',
             data:{
                 names:['李雷','韩梅梅','李梅','韩雷雷'],
+                isShow:true,
+                isDisabled:false
+            },
+            methods:{
+                btnClick:function(){
+                    // this 指当前vue的实例
+                    // 点击按钮控制ul显示隐藏
+                    // this.isShow = !this.isShow;
 
+                    // 点击按钮给列表增加一项数据
+                    // this.names.push("禾禾")
+
+                    //禁用按钮
+                    this.isDisabled = true;
+                }
             }
         })
     </script>
