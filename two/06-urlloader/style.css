@@ -1,0 +1,11 @@
+body{
+    background-color: skyblue;
+    background-image: url(./images/image.jpg);
+}
+
+a {
+    transition: transform 1s;
+
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
