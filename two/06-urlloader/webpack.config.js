@@ -26,8 +26,13 @@ module.exports = {
             },
             {
                 //设置处理不同类型的文件
-                test: /\.(jpg|gif|png)$/,//配置后缀名
-                loader: 'url-loader'//loader执行顺序是从右到左
+                test: /\.(jpg|gif|png|eot|svg|ttf|woff|otf)$/,//配置后缀名
+                loader: 'url-loader?limit=90000'//loader执行顺序是从右到左
+
+                //loader:'url-loader?limit=20480'
+                //limit 单位是字节
+                //limit的作用,如果图片小于20480图片会自动被编译成base64的字符串
+                //如果大于20480 不会被编译成base64字符串 并且依赖于file-loader会把图片复制到输出目录
             }
         ]
     }

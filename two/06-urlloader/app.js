@@ -10,6 +10,10 @@
 require('./style.css');
 
 
+//引入字体图标的css
+require('./css/font-awesome.css')
+
+
 //实现页面上的加法运算
 
 //使用模块中提供的加法功能,导入模块
